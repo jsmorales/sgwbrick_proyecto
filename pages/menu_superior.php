@@ -1,7 +1,7 @@
 <?php 
-    $nombre = $_COOKIE["log_usuario_nombre"];
-    $alias = $_COOKIE["log_usuario_alias"];
-    $tipo = $_COOKIE["log_usuario_tipo"];
+    $nombre = $_COOKIE["log_brick_nombre"];
+    $alias = $_COOKIE["log_brick_alias"];
+    $tipo = $_COOKIE["log_brick_tipo"];
  ?>
 <body>
 
@@ -24,11 +24,9 @@
               
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i> <?php echo $nombre ?> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> <?php echo $nombre ?></a>
-                        </li>
+                    <ul class="dropdown-menu dropdown-user">                        
                         <li><a href="#"><i class="fa fa-tag fa-fw"></i> <?php echo $tipo ?></a>
                         </li>                        
                         <li class="divider"></li>

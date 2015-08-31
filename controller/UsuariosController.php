@@ -67,11 +67,11 @@ class UsuariosController {
 		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		if (($id!="") and ($nombre!="")){
 
-			setcookie("log_usuario_id", $id, time() + 3600, "/");
-			setcookie("log_usuario_alias", $alias, time() + 3600, "/");
-			setcookie("log_usuario_nombre", $nombre." ".$apellidos, time() + 3600, "/");
-			setcookie("log_usuario_num_cc", $num_cc, time() + 3600, "/");
-			setcookie("log_usuario_tipo", $tipo, time() + 3600, "/");
+			setcookie("log_brick_id", $id, time() + 3600, "/");
+			setcookie("log_brick_alias", $alias, time() + 3600, "/");
+			setcookie("log_brick_nombre", $nombre." ".$apellidos, time() + 3600, "/");
+			setcookie("log_brick_num_cc", $num_cc, time() + 3600, "/");
+			setcookie("log_brick_tipo", $tipo, time() + 3600, "/");
 
 			//echo "la cookie queda:".$id."-".$nombre."-".$tipo;
 
