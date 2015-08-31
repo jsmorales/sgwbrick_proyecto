@@ -1,4 +1,4 @@
 <?php
-	include_once('UsuariosController.php'); 
+	include_once('UsuariosController.php');
 	UsuariosController::AutenticarUsuario();
  ?>

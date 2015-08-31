@@ -359,3 +359,10 @@ table.dataTable thead .sorting:after {
     font-size: 150px;
 }
 /*-----------------------------------------------------*/
+
+/*-----------------------------------------------------*/
+[class^="menu-icono"]:before, [class*="menu-icono"]:before,
+[class^="menu-icono"]:after, [class*="menu-icono"]:after {
+    margin-left: 0px;
+}
+/*-----------------------------------------------------*/

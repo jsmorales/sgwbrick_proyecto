@@ -56,30 +56,32 @@ class UsuariosController {
 		//print_r($matriz);
 		
 		$id=$matriz[0]['pkID'];
+		$alias=$matriz[0]['alias'];
 		$nombre=$matriz[0]['nombres'];
-		$tipo=$matriz[0]['tipo_id'];
-		$nombre_tipo=$matriz[0]['tipo_usuario'];
-		$estado=$matriz[0]['estado_id'];
+		$apellidos=$matriz[0]['apellidos'];
+		$num_cc=$matriz[0]['numero_cc'];
+		$tipo=$matriz[0]['tipo'];
 
 		//echo "El estado del usuario es: ".$estado;
 
 		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		if (($id!="") and ($nombre!="") and ($estado == 1) ){
+		if (($id!="") and ($nombre!="")){
 
 			setcookie("log_usuario_id", $id, time() + 3600, "/");
-			setcookie("log_usuario_nombre", $nombre, time() + 3600, "/");
+			setcookie("log_usuario_alias", $alias, time() + 3600, "/");
+			setcookie("log_usuario_nombre", $nombre." ".$apellidos, time() + 3600, "/");
+			setcookie("log_usuario_num_cc", $num_cc, time() + 3600, "/");
 			setcookie("log_usuario_tipo", $tipo, time() + 3600, "/");
-			setcookie("log_usuario_tipo_nombre", $nombre_tipo, time() + 3600, "/");
 
 			//echo "la cookie queda:".$id."-".$nombre."-".$tipo;
 
 			//echo "nombre desde la cookie:".$_COOKIE["log_usuario_nombre"];
 
 			echo '<script language="JavaScript">
-					alert("Bienvenido '.$nombre.'");					
+					alert("Bienvenido '.$nombre.' '.$apellidos.'");					
 			</script>';
 
-			echo "<script language=javascript> location.href='../Vistas/localidades.php' </script>";
+			echo "<script language=javascript> location.href='../pages/index_p.php'</script>";
 				
 		} else {
 		

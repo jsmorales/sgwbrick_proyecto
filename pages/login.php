@@ -17,19 +17,19 @@
                            <h3 class="text-center">Brick</h3>               
                            <h1 class="flaticon-wall20 text-center logo-icono"></h1>
                         <!-- -->
-                        <form role="form">
+                        <form role="form" action="../controller/login_autentica.php" method="POST">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Usuario" name="email" type="text" autofocus>
+                                    <input id="username" name="username" class="form-control" placeholder="Usuario" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Contraseña" name="password" type="password" value="">
+                                    <input id="password" name="password" class="form-control" placeholder="Contraseña" type="password" value="">
                                 </div>
                                 
-                                <!-- Change this to a button or input when using this as a form -->                                
+                                <!-- Change this to a button or input when using this as a form --> 
+                                <button id="btn_login" class="btn btn-lg btn-success btn-block">Ingresar</button>                               
                             </fieldset>
-                        </form>
-                        <button id="btn_login" class="btn btn-lg btn-success btn-block">Ingresar</button>
+                        </form>                        
                     </div>
                 </div>
             </div>
@@ -39,8 +39,6 @@
 <?php 
   include 'footer.php';
 ?>
-
-<script src="../js/scripts_cont/login_script.js"></script>
 
 </body>
 
