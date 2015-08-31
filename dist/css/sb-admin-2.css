@@ -352,3 +352,10 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+/*-----------------------------------------------------*/
+[class^="logo-icono"]:before, [class*="logo-icono"]:before,
+[class^="logo-icono"]:after, [class*="logo-icono"]:after {
+    font-size: 150px;
+}
+/*-----------------------------------------------------*/
