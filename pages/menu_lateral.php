@@ -4,7 +4,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Buscar Materiales...">
+                                <input type="text" class="form-control" placeholder="Buscar">
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
@@ -21,9 +21,11 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Cotizaciones</a>
+                            <a href="#"><i class="glyphicon glyphicon-user"></i> Clientes</a>
                         </li>
-                        
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Cotizaciones</a>
+                        </li>                                                
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Administración<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
