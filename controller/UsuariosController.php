@@ -1,7 +1,6 @@
 
 <?php
 include_once '../DAO/UsuariosDAO.php';
-
 /**
  * La clase UsuariosController maneja toda la parte de procesamiento de datos de usuarios
  *

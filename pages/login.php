@@ -10,7 +10,7 @@
             <div class="col-md-4 col-md-offset-4">                
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Ingresa a Brick</h3>
+                        <h3 class="panel-title text-center">Inicio de Sesión</h3>
                     </div>
                     <div class="panel-body">
                         <!-- --> 
@@ -29,10 +29,11 @@
                                 <!-- Change this to a button or input when using this as a form --> 
                                 <button id="btn_login" class="btn btn-lg btn-success btn-block">Ingresar</button>                               
                             </fieldset>
-                        </form>                        
-                    </div>
+                        </form>
+                        <h5 class="text-center"><a href="#"><i class="glyphicon glyphicon-ok-circle"></i> Registrarse</a></h5>
+                    </div>                   
                 </div>
-            </div>
+            </div>            
         </div>
     </div>
 

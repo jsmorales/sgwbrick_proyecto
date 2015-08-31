@@ -18,15 +18,17 @@ error_reporting(0);
 
 		private function destruye_cookies(){
 
-			unset($_COOKIE["log_usuario_id"]);
-			unset($_COOKIE["log_usuario_nombre"]);
-			unset($_COOKIE["log_usuario_alias"]);
-			unset($_COOKIE["log_usuario_num_cc"]);
+			unset($_COOKIE["log_brick_id"]);
+			unset($_COOKIE["log_brick_nombre"]);
+			unset($_COOKIE["log_brick_alias"]);
+			unset($_COOKIE["log_brick_num_cc"]);
+			unset($_COOKIE["log_brick_tipo"]);
 
-			setcookie("log_usuario_id", null, -1, '/');
-			setcookie("log_usuario_nombre", null, -1, '/');
-			setcookie("log_usuario_alias", null, -1, '/');
-			setcookie("log_usuario_num_cc", null, -1, '/');
+			setcookie("log_brick_id", null, -1, '/');
+			setcookie("log_brick_nombre", null, -1, '/');
+			setcookie("log_brick_alias", null, -1, '/');
+			setcookie("log_brick_num_cc", null, -1, '/');
+			setcookie("log_brick_tipo", null, -1, '/');
 
 		}
 

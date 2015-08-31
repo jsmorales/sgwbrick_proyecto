@@ -17,7 +17,7 @@
                             <a href="index_p.php"><i class="fa fa-home fa-fw"></i> Inicio</a>
                         </li>
                         <li>
-                            <a href="#"><i class="flaticon-brick7"></i> Materiales</a>                            
+                            <a href="materiales.php"><i class="flaticon-brick7"></i> Materiales</a>                            
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
