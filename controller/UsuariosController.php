@@ -52,14 +52,14 @@ class UsuariosController {
 		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		
 		$matriz=UsuariosDAO::getUsuariosLogin($Usr_Mail,$Usr_Clave);
-		//print_r($matriz);
+		print_r($matriz);
 		
 		$id=$matriz[0]['pkID'];
 		$alias=$matriz[0]['alias'];
 		$nombre=$matriz[0]['nombres'];
 		$apellidos=$matriz[0]['apellidos'];
 		$num_cc=$matriz[0]['numero_cc'];
-		$tipo=$matriz[0]['tipo'];
+		$tipo=$matriz[0]['t_usuario'];
 
 		//echo "El estado del usuario es: ".$estado;
 

@@ -19,9 +19,15 @@ class UsuariosDAO extends GenericoDAO{
        //return GenericoDAO::EjecutarConsulta($sql);
     }
 	
-	 public static function getUsuariosLogin($p_usuario,$p_password){
-        
-   		$query = "select * from usuarios where alias='".$p_usuario."' and pass=SHA1('".$p_password."')";
+	 public static function getUsuariosLogin($p_usuario,$p_password){           	
+
+      $query = "select usuarios.*, tipo_usuario.nombre as t_usuario
+
+                FROM `usuarios`
+
+                inner join tipo_usuario on tipo_usuario.pkID = usuarios.fkID_tipo
+
+                where usuarios.alias='".$p_usuario."' and usuarios.pass=SHA1('".$p_password."')";
    			
 		$Conector = new Conexion();
 		$db=$Conector->connect();		
