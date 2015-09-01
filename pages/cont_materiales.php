@@ -50,7 +50,7 @@
                                                     <td>'.$nombre.'</td>
                                                     <td>'.$precio.'</td>                                                    
                                                     <td>'.$marca.'</td>
-                                                    <td><div class="img_alido_edit"><img class="img-responsive" alt="Responsive image" src="subidas/'.$imagen.'" height="200"></div></td>
+                                                    <td><div class="img_alido_edit"><img src="subidas/'.$imagen.'" height="150"></div></td>
                                                     <td><ul class="list-group">';
                                                     /**/
                                                     if(sizeof($propiedades[0])>0){
