@@ -52,7 +52,7 @@ class UsuariosController {
 		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		
 		$matriz=UsuariosDAO::getUsuariosLogin($Usr_Mail,$Usr_Clave);
-		print_r($matriz);
+		//print_r($matriz);
 		
 		$id=$matriz[0]['pkID'];
 		$alias=$matriz[0]['alias'];

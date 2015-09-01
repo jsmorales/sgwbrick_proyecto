@@ -38,6 +38,9 @@
 
     <link rel="stylesheet" type="text/css" href="../dist/css/iconos/flaticon.css">
 
+    <!-- css para DataTables -->
+    <link href="../js/plugins/DataTables/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <?php /*
