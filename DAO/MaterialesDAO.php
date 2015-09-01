@@ -7,7 +7,9 @@
 		/*-----------------------------*/
 		//variables
 		public $q_general;
-		public $q_propiedades;		
+		public $q_propiedades;
+
+		public $q_inserta;		
 		/*-----------------------------*/
 		public function __construct(){
 			//contruye la clase GenericoDAO
@@ -36,6 +38,12 @@
 									where material_propiedad.fkID_material =".$id_material;			
 			
 			return GenericoDAO::EjecutarConsulta($this->q_propiedades);
+		}
+
+		public function insertaMateriales($q_insertaMaterial){						
+			$this->q_inserta = $q_insertaMaterial;
+			$generico = new GenericoDAO();
+			return $generico->EjecutarConsulta($this->q_inserta);
 		}
 		/*-----------------------------*/
 		
