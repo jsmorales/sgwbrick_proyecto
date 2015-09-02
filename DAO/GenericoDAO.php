@@ -59,7 +59,7 @@ class GenericoDAO {
 
 				else{
 					$this->r["estado"] = "ok";
-					$this->r["mensaje"] = "Insertado correctamente.";
+					$this->r["mensaje"] = "Guardado correctamente.";
 
 					return $this->r;
 				}

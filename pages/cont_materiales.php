@@ -17,7 +17,7 @@
       	<!-- form modal contenido -->
 
         <!-- Nav tabs -->
-		  <ul class="nav nav-tabs" role="tablist">
+		  <ul id="myTab" class="nav nav-tabs" role="tablist">
 		    <li role="presentation" class="active"><a href="#materialTab" aria-controls="home" role="tab" data-toggle="tab">Material</a></li>
 		    <li role="presentation"><a href="#propiedadesTab" aria-controls="profile" role="tab" data-toggle="tab">Propiedades</a></li>		    
 		  </ul>
@@ -67,9 +67,61 @@
 		    </div>
 		    <!-- /1 -->
 		    <!-- 2 -->
-		    <div role="tabpanel" class="tab-pane" id="propiedadesTab">
-		      ...
-		    </div>
+		    <div role="tabpanel" class="tab-pane" id="propiedadesTab" hidden>
+		      <br>
+                <form id="form_propiedades" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="propiedad" class="col-sm-2 control-label">Propiedad</label>
+                        <div class="col-sm-10">
+                            <select name="fkID_propiedad" id="fkID_propiedad" class="form-control">
+                                <option>Seleccione una propiedad</option>                                
+                                <?php 
+                                    $propiedadSelect = MaterialesController::getPropiedades();
+                                    for ($i=0; $i < sizeof($propiedadSelect); $i++) {
+                                        echo '<option value="'.$propiedadSelect[$i]["pkID"].'">'.$propiedadSelect[$i]["nombre"].'</option>';
+                                    };
+                                 ?>
+                            </select>
+                        </div>                        
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Valor</label>
+                        <div class="col-sm-10">
+                            <input id="valor" type="text" name="valor" class="form-control" placeholder="Valor para esta propiedad">                        
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Unidad de medida</label>
+                        <div class="col-sm-10">
+                            <select name="fkID_uMedida" id="fkID_uMedida" class="form-control">
+                                <option>Seleccione una medida</option>
+                                <?php 
+                                    $uMedidaSelect = MaterialesController::getUniMedida();
+                                    for ($i=0; $i < sizeof($uMedidaSelect); $i++) {
+                                        echo '<option value="'.$uMedidaSelect[$i]["pkID"].'">'.$uMedidaSelect[$i]["abreviatura"].'</option>';
+                                    };
+                                 ?>
+                            </select>
+                        </div>                        
+                    </div>
+                </form>
+              <button id="btn_creaPropiedad" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i>Añadir propiedad</button>
+
+                    <div id="gestionPropiedades">
+                      <div class="page-header">
+                        <h3>Propiedades para este Material</h3>
+                      </div>
+                      <ul id="listaPropiedades" class="list-group">
+                        <!--
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li> -->
+                      </ul>
+                    </div>
+                
+		      </div>
 		    <!-- /2 -->		    
 		  </div>
 
@@ -145,7 +197,7 @@
                                                                   </div>';
                                                               };
                                                     echo '</ul></td>
-                                                    <td><button id="btn_editar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#p00" data-id-material = "'.$id.'" ><span class="glyphicon glyphicon-pencil"></span>&nbspEditar</button></td>
+                                                    <td><button id="btn_editar" name="edita_material" type="button" class="btn btn-primary" data-toggle="modal" data-target="#form_modal_materiales" data-id-material = "'.$id.'" ><span class="glyphicon glyphicon-pencil"></span>&nbspEditar</button></td>
                                                 </tr>';
                                 			};
                                 		}else{

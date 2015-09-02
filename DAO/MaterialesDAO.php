@@ -25,9 +25,14 @@
 			return GenericoDAO::EjecutarConsulta($this->q_general);
 		}
 
+		public function getMaterialId($q_material){						
+			
+			return GenericoDAO::EjecutarConsulta($q_material);
+		}
+
 		public function getMaterialPropiedades($id_material){
 
-			$this->q_propiedades = "select propiedad.nombre, material_propiedad.valor, u_medida.abreviatura
+			$this->q_propiedades = "select material_propiedad.pkID, propiedad.nombre, material_propiedad.valor, u_medida.abreviatura
 
 									FROM `material_propiedad`
 
@@ -46,6 +51,20 @@
 			return GenericoDAO::EjecutaInsertar($this->q_inserta);
 		}
 		/*-----------------------------*/
+
+		public function getPropiedades(){
+
+			$this->q_general = "select * from propiedad";				
+			
+			return GenericoDAO::EjecutarConsulta($this->q_general);
+		}
+
+		public function getUmedida(){
+
+			$this->q_general = "select * from u_medida";				
+			
+			return GenericoDAO::EjecutarConsulta($this->q_general);
+		}
 		
 	}
 
