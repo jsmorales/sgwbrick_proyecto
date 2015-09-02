@@ -59,7 +59,7 @@
                         <label for="imagen_sube" class="col-sm-2 control-label">Imagen</label>
                         <input id="imagen_sube" type="file" name="imagen_sube">                        
                     </div>
-                    <div class="form-group">                    
+                    <div class="form-group" hidden>                    
                         <input type="text" id="imagen" name="imagen" value="" class="form-control" required = "true">
                     </div>
 		    	</form>
@@ -68,7 +68,7 @@
 		    <!-- /1 -->
 		    <!-- 2 -->
 		    <div role="tabpanel" class="tab-pane" id="propiedadesTab">
-		    ...
+		      ...
 		    </div>
 		    <!-- /2 -->		    
 		  </div>

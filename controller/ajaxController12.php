@@ -2,9 +2,7 @@
 	
 	header('content-type: aplication/json; charset=utf-8');//header para json	
 	
-	include('materialesController.php');
-
-	$materiales = new MaterialesController();
+	include('../DAO/MaterialesDAO.php');
 
  	$accion= isset($_GET['tipo'])?$_GET['tipo']:"x";
 
@@ -12,7 +10,9 @@
 
  	switch ($accion) { 		
  		//----------------------------------------------------------------------------------------------------
-	 	case 'inserta_material':	 		
+	 	case 'inserta_material':
+
+	 		$materiales = new materiales();
 
 	 		$q_inserta = "insert INTO `material` (`pkID`, `nombre`, `precio`, `marca`, `imagen`, `fkID_clase`, `fkID_tipo`) 
 

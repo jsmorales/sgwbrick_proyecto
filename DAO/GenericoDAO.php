@@ -15,10 +15,12 @@ class GenericoDAO {
      * @var Conexion
      */
    protected $Conector;
+   private $r;
    
      
    public function __construct() {
         $this->Conector = new Conexion();
+        $this->r = array();
     }
      
     /**
@@ -44,6 +46,63 @@ class GenericoDAO {
 		}
 		$result->free();
 	}
+	//------------------------------------------------------------------------
+		public function EjecutaInsertar($query){
+
+			 // $db=$Conector->connect();
+			$Conector = new Conexion();
+			$db=$Conector->connect();
+
+		       if(!$result = $db->query($query)){
+					die('There was an error running the query [' . $db->error . ']');
+				}
+
+				else{
+					$this->r["estado"] = "ok";
+					$this->r["mensaje"] = "Insertado correctamente.";
+
+					return $this->r;
+				}
+		}
+	//------------------------------------------------------------------------	
+		public function EjecutaActualizar($query){
+
+			 // $db=$Conector->connect();
+			$Conector = new Conexion();
+			$db=$Conector->connect();
+
+		       if(!$result = $db->query($query)){
+					die('There was an error running the query [' . $db->error . ']');
+				}
+
+				else{
+					$this->r["estado"] = "ok";
+					$this->r["mensaje"] = "Actualizado correctamente.";
+
+					return $this->r;
+				}
+		}
+	//------------------------------------------------------------------------
+	//------------------------------------------------------------------------
+
+		public function EjecutaEliminar($query){
+
+			 // $db=$Conector->connect();
+			$Conector = new Conexion();
+			$db=$Conector->connect();
+
+		       if(!$result = $db->query($query)){
+					die('There was an error running the query [' . $db->error . ']');
+				}
+
+				else{
+					$this->r["estado"] = "ok";
+					$this->r["mensaje"] = "Eliminado correctamente.";
+
+					return $this->r;
+				}
+		}
+	//------------------------------------------------------------------------
    
 }
 

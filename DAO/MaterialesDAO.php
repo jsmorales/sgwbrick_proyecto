@@ -42,8 +42,8 @@
 
 		public function insertaMateriales($q_insertaMaterial){						
 			$this->q_inserta = $q_insertaMaterial;
-			$generico = new GenericoDAO();
-			return $generico->EjecutarConsulta($this->q_inserta);
+			//$generico = new GenericoDAO();
+			return GenericoDAO::EjecutaInsertar($this->q_inserta);
 		}
 		/*-----------------------------*/
 		

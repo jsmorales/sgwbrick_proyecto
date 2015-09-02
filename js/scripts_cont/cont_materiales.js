@@ -72,24 +72,23 @@ $(function(){
       //console.log(objt_f_adminPublicidad.srlz);
       //--------------------------------------
       /**/
-      if(objt_f_material.estado = true){
+      if(objt_f_material.estado == true){
 
         $.ajax({
           url: "../controller/ajaxController.php",
           data: objt_f_material.srlz+"&tipo=inserta_material",
         })
         .done(function(data) {
-          
+          //---------------------
           subida_foto();
-
+          //---------------------
+          console.log(data);
           alert(data[0].mensaje);
           location.reload();
-          //console.log();
         })
         .fail(function(data) {
-          console.log("error");
-          alert(data[0].mensaje);
-          location.reload();
+          console.log(data);
+          alert(data[0].mensaje);          
         })
         .always(function() {
           console.log("complete");
