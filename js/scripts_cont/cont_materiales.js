@@ -224,7 +224,7 @@ $(function(){
           console.log(valor.nombre);          
           /**/
           $("#listaPropiedades").append(
-            "<li class='list-group-item'> "+valor.nombre+" "+valor.valor+" "+valor.abreviatura+" <a id='propiedad"+valor.pkID+"' data-id-propiedad='"+valor.pkID+"' data-id-material='"+$("#pkID").val()+"'><span class='glyphicon glyphicon-remove'></span>&nbspQuitar</a> "+"</li>"
+            "<li class='list-group-item'> "+valor.nombre+" "+valor.valor+" "+valor.abreviatura+" <a id='propiedad"+valor.pkID+"' data-id-propiedad='"+valor.pkID+"' data-id-material='"+$("#pkID").val()+"' class='cursor_pointer'><span class='glyphicon glyphicon-remove'></span>&nbspQuitar</a> "+"</li>"
             //"<li class='list-group-item'>"+valor.nombre+" "+valor.valor+" "+valor.abreviatura+"</li>"
           );
         });
