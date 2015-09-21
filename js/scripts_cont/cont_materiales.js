@@ -20,10 +20,10 @@ $(function(){
 	function valida_action(action){
 
   		if(action==="crear"){
-    		crea_material();
+    		crea();
     		//subida_foto();
   		}else if(action==="editar"){
-    		edita_material();
+    		edita();
   		};
 	};
 
@@ -67,8 +67,8 @@ $(function(){
 		//---------------------------------------------------------------------------------------
     };//cierra función subida
 
-    function crea_material(){
-
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    function crea(){
       //--------------------------------------
       //crea el objeto formulario serializado
       objt_f_material = $("#form_material").valida();
@@ -79,8 +79,8 @@ $(function(){
       if(objt_f_material.estado == true){
 
         $.ajax({
-          url: "../controller/ajaxController.php",
-          data: objt_f_material.srlz+"&tipo=inserta_material",
+          url: "../controller/ajaxController12.php",
+          data: objt_f_material.srlz+"&tipo=inserta&nom_tabla=material",
         })
         .done(function(data) {
           //---------------------
@@ -92,7 +92,7 @@ $(function(){
         })
         .fail(function(data) {
           console.log(data);
-          alert(data[0].mensaje);          
+          //alert(data[0].mensaje);          
         })
         .always(function() {
           console.log("complete");
@@ -101,24 +101,28 @@ $(function(){
       }else{
         alert("El formulario no está totalmente diligenciado, revíselo e inténtelo de nuevo.");
       };
+    }
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    };
-  //cierra crea
+    
 
   function carga_material(id_material){
 
     console.log("Carga el material "+id_material);
 
     $.ajax({
-        url: '../controller/ajaxController.php',
-        data: "id_material="+id_material+"&tipo=ver_material",
+        url: '../controller/ajaxController12.php',
+        data: "pkID="+id_material+"&tipo=ver&nom_tabla=material",
     })
     .done(function(data) {
 
-        $.each(data.mensaje[0], function( key, value ) {
+      //console.log(data[0][0]);
+
+        /**/
+        $.each(data[0][0], function( key, value ) {
           console.log(key+"--"+value);
           $("#"+key).val(value);
-        });
+        }); 
 
     })
     .fail(function() {
@@ -131,8 +135,8 @@ $(function(){
   };
   //cierra carga_material
 
-  function edita_material(){
-
+  
+  function edita(){
     //--------------------------------------
     //crea el objeto formulario serializado
     objt_f_material = $("#form_material").valida();
@@ -143,13 +147,14 @@ $(function(){
         console.log(objt_f_material.srlz);
 
         $.ajax({
-            url: '../controller/ajaxController.php',
-            data: objt_f_material.srlz+"&tipo=actualiza_material",
+            url: '../controller/ajaxController12.php',
+            data: objt_f_material.srlz+"&tipo=actualiza&nom_tabla=material",
         })
         .done(function(data) {
             //---------------------
             subida_foto();
             //---------------------
+            //console.log(data);
             console.log(data[0].mensaje);
             alert(data[0].mensaje);
             location.reload();
@@ -165,9 +170,34 @@ $(function(){
         alert("Faltan "+Object.keys(objt_f_evento.objt).length+" campos por llenar.");
     }
     //------------------------------------------------------
+  }
+  //cierra funcion edita
 
-  };
-  //cierra funcion edita_material
+  function elimina(id_material){
+    var confirma = confirm("Quiere eliminar este elemento?");
+
+    if(confirma == true){
+
+      $.ajax({
+            url: '../controller/ajaxController12.php',
+            data: "pkID="+id_material+"&tipo=elimina&nom_tabla=material",
+        })
+        .done(function(data) {
+            //---------------------
+            //console.log(data);
+            console.log(data[0].mensaje);
+            alert(data[0].mensaje);
+            location.reload();
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+    }
+
+  }
 
   function agrega_propiedad(){
 
@@ -178,8 +208,8 @@ $(function(){
     var c_inserta_propiedad = "fkID_material="+$("#pkID").val()+"&fkID_propiedad="+id_propiedad_select+"&valor="+id_valor_select+"&fkID_uMedida="+id_uMedida_select;
 
     $.ajax({
-      url: "../controller/ajaxController.php",
-      data: c_inserta_propiedad+"&tipo=inserta_propiedad",
+      url: "../controller/ajaxController12.php",
+      data: c_inserta_propiedad+"&tipo=inserta&nom_tabla=material_propiedad",
     })
     .done(function(data) {
       console.log(data);
@@ -211,7 +241,7 @@ $(function(){
     //console.log("Carga el material "+id_material);
 
     $.ajax({
-        url: '../controller/ajaxController.php',
+        url: '../controller/ajaxController12.php',
         data: "id_material="+id_material+"&tipo=ver_propiedades",
     })
     .done(function(data) {
@@ -251,8 +281,8 @@ $(function(){
       var id_propiedad_p = $(this).attr("data-id-propiedad");
 
       $.ajax({
-        url: "../controller/ajaxController.php",
-        data: "id_propiedad="+id_propiedad_p+"&tipo=elimina_propiedad"
+        url: "../controller/ajaxController12.php",
+        data: "pkID="+id_propiedad_p+"&tipo=elimina&nom_tabla=material_propiedad"
       })
       .done(function(data) {
 
@@ -355,6 +385,14 @@ $(function(){
       carga_material(id_material);
       carga_propiedades(id_material);
   });
+
+  $("[name*='elimina_material']").click(function(event) {      
+    
+      id_material = $(this).attr('data-id-material');
+      
+      elimina(id_material);
+  });
+
 
 	/*
 	Botón de accion de formulario

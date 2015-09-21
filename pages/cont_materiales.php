@@ -60,7 +60,7 @@
                         <input id="imagen_sube" type="file" name="imagen_sube">                       
                     </div>
                     <div class="form-group" hidden>                    
-                        <input type="text" id="imagen" name="imagen" value="" class="form-control" required = "true">
+                        <input type="text" id="imagen" name="imagen" value="" class="form-control">
                     </div>
 		    	</form>
 		    	<!-- /formulario 1 materiales -->
@@ -197,7 +197,10 @@
                                                                   </div>';
                                                               };
                                                     echo '</ul></td>
-                                                    <td><button id="btn_editar" name="edita_material" type="button" class="btn btn-primary" data-toggle="modal" data-target="#form_modal_materiales" data-id-material = "'.$id.'" ><span class="glyphicon glyphicon-pencil"></span>&nbspEditar</button></td>
+                                                    <td>
+                                                    <button id="btn_eliminar" name="elimina_material" type="button" class="btn btn-danger" data-toggle="modal" data-target="#form_modal_materiales" data-id-material = "'.$id.'" ><span class="glyphicon glyphicon-remove"></span>&nbspEliminar</button>
+                                                    <br><br>
+                                                    <button id="btn_editar" name="edita_material" type="button" class="btn btn-primary" data-toggle="modal" data-target="#form_modal_materiales" data-id-material = "'.$id.'" ><span class="glyphicon glyphicon-pencil"></span>&nbspEditar</button></td>
                                                 </tr>';
                                 			};
                                 		}else{

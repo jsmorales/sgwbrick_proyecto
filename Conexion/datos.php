@@ -2,7 +2,7 @@
 	
 	$dbconection="brick";
 	$userconection="root";
-    $passconection="3115208657";
+    $passconection="Lunel2016";
     $hostconection="localhost";
 
  ?>
