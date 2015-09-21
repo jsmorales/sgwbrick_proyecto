@@ -140,7 +140,7 @@
 			<div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Materiales</h1>
-        		    <p>Esta es la página de materiales.</p>
+        		    <br><br>
         		    <!-- tabla de materiales -->
         		    <table id="tabla_materiales" class="table table-bordered table-hover table-striped">
 
